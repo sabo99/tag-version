@@ -1,0 +1,35 @@
+{
+  "plugins": [
+    "simple-import-sort"
+  ],
+  "rules": {
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error",
+    // Space rules
+    "space-before-blocks": ["error", "always"],
+    "space-before-function-paren": ["error", "never"],
+    "space-infix-ops": ["error"],
+    "keyword-spacing": ["error", { "before": true, "after": true }],
+    "object-curly-spacing": ["error", "always"],
+    // Multiline props rules
+    "react/jsx-first-prop-new-line": ["error", "multiline-multiprop"],
+    "react/jsx-max-props-per-line": ["error", { "maximum": 1 }],
+    // General rules
+    "comma-spacing": "error",
+    "quotes": ["error", "double"],
+    "no-undef": "error",
+    "no-unused-vars": "warn"
+  },
+  "env": {
+    "jest": true
+  },
+  "overrides": [
+    {
+      "files": ["*.test.*", "*.spec.*", "*.type.*"],
+      "rules": {
+        "no-undef": "off",
+        "no-unused-vars": "off"
+      }
+    }
+  ]
+}

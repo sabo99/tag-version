@@ -1,0 +1,43 @@
+{
+  "name": "tag-version",
+  "version": "0.1.0",
+  "description": "Automatically create a Git tag based on the version in package.json",
+  "main": "./dist/create-tag.js",
+  "bin": {
+    "tag-version": "./dist/create-tag.js"
+  },
+  "type": "module",
+  "scripts": {
+    "clean:build": "rm -rf dist",
+    "clean:node_modules": "rm -rf node_modules",
+    "pre-clean": "yarn clean:build && yarn clean:node_modules",
+    "clean": "yarn pre-clean && npm install",
+    "build": "tsc",
+    "rebuild": "yarn clean:build && yarn build",
+    "lint": "yarn eslint src",
+    "lint:fix": "yarn eslint src --fix",
+    "lintf": "yarn eslint src --fix",
+    "pretest": "yarn lint",
+    "test": "jest",
+    "posttest": "yarn build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "sabo99"
+  },
+  "keywords": [
+    "git-tags",
+    "versioning"
+  ],
+  "author": "sabo99",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.10.1",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.2.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.2",
+    "typescript-eslint": "^8.17.0"
+  }
+}
